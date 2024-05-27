@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Gesture Recognition</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3"></script>
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <h1>Recognize hand gestures using the MediaPipe HandGestureRecognizer task</h1>
+    <section id="demos" class="invisible">
+        <h2>Demo: Recognize gestures</h2>
+        <p><em>Click on an image below</em> to identify the gestures in the image.</p>
+        <div class="detectOnClick">
+            <img src="https://assets.codepen.io/9177687/idea-gcbe74dc69_1920.jpg" crossorigin="anonymous" title="Click to get recognized!" />
+            <p class="classification removed"></p>
+        </div>
+        <div class="detectOnClick">
+            <img src="https://assets.codepen.io/9177687/thumbs-up-ga409ddbd6_1.png" crossorigin="anonymous" title="Click to get recognized!" />
+            <p class="classification removed"></p>
+        </div>
+        <h2><br>Demo: Webcam continuous hand gesture detection</h2>
+        <p>Use your hand to make gestures in front of the camera to get gesture classification. <br>Click <b>ENABLE WEBCAM</b> below and grant access to the webcam if prompted.</p>
+        <div id="liveView" class="videoView">
+            <button id="webcamButton" class="mdc-button mdc-button--raised">
+                <span class="mdc-button__ripple"></span>
+                <span class="mdc-button__label">ENABLE WEBCAM</span>
+            </button>
+            <div style="position: relative;">
+                <video id="webcam" autoplay playsinline></video>
+                <canvas class="output_canvas" id="output_canvas" width="1280" height="720" style="position: absolute; left: 0px; top: 0px;"></canvas>
+                <p id="gesture_output" class="output"></p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
